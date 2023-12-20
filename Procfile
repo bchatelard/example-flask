@@ -1,1 +1,1 @@
-web: gunicorn -b :$PORT app:app
+web: sysctl -a && gunicorn -b :$PORT app:app
