@@ -4,7 +4,7 @@ import signal
 app = Flask(__name__)
 
 def exit_gracefully(*args):
-    print("Doing cleanup actions here")
+    app.logger.info("Doing cleanup actions here")
 
 signal.signal(signal.SIGTERM, exit_gracefully)
 
