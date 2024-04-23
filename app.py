@@ -4,7 +4,7 @@ import signal
 app = Flask(__name__)
 
 def exit_gracefully(*args):
-    app.logger.info("Doing cleanup actions here")
+    app.logger.warn("Doing cleanup actions here")
 
 signal.signal(signal.SIGTERM, exit_gracefully)
 
@@ -14,4 +14,5 @@ def hello_world():
 
 
 if __name__ == "__main__":
+    app.logger.warn("launching app")
     app.run()
